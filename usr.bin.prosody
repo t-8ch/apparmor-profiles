@@ -1,0 +1,19 @@
+# vim: ft=apparmor
+
+#include <tunables/global>
+
+/usr/bin/prosody {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/ssl_certs>
+  #include <abstractions/ssl_keys>
+  #include <abstractions/lua>
+
+  /usr/bin/prosody r,
+  /etc/prosody/** r,
+  /run/prosody/** rwk,
+  /var/lib/prosody/** rwk,
+  /var/lib/prosody/ rw,
+  /usr/lib/prosody/** rm,
+  /var/lib/prosody/** rwk,
+}

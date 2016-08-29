@@ -1,0 +1,24 @@
+# vim: ft=apparmor
+
+#include <tunables/global>
+
+profile /usr/sbin/openvpn {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+
+  network tcp,
+  network udp,
+
+  capability net_admin,
+  capability setgid,
+  capability setuid,
+
+  # does "tap" make sense here?
+  /dev/net/{tun,tap} rw,
+
+  /etc/openvpn/** r,
+  /var/lib/openvpn/ rw,
+  /var/lib/openvpn/** rwk,
+
+  /bin/ip ix,
+}
