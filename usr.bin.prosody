@@ -5,7 +5,7 @@
 
 #include <tunables/global>
 
-/usr/bin/prosody {
+profile /usr/bin/prosody {
   #include <abstractions/base>
   #include <abstractions/nameservice>
   #include <abstractions/ssl_certs>
