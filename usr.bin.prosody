@@ -1,5 +1,8 @@
 # vim: ft=apparmor
 
+# License: BSD-3-Clause, see LICENSE
+# Copyright (c) 2016, Thomas Weißschuh
+
 #include <tunables/global>
 
 /usr/bin/prosody {
